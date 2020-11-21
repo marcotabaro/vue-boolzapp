@@ -9,15 +9,24 @@
     <!-- Vue.Js Dev mode CDN -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     
-    <!-- Font Awesome 4.7.0 -->
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
+    <!-- Font Awesome 5 -->
+    <script src="https://kit.fontawesome.com/ebbef65990.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
         <div id='root' class="container">
             <header class="d-flex">
-                <div class="header-left">
-                    <img src="img/avatar_io.jpg" alt="">
+                <div class="header-left d-flex">
+                   <div class="mySection d-flex">
+                    <img id='myPicture' class='circle-image'
+                    src="img/avatar_io.jpg" alt="My Profile Picture"> 
+                    <p>Marco Taba</p>
+                   </div>
+                   <div class="d-flex">
+                    <i class="fas fa-circle-notch"></i>
+                    <i class="fas fa-comment-alt"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                   </div>
                 </div>
                 <div class="header-right">
                    

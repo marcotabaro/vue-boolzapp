@@ -17,6 +17,8 @@ body {
 .header-left, .header-right {
     background-color:#eaeaea;
     height: 60px;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .header-left, .main-left {
@@ -28,10 +30,15 @@ body {
     width: 70%;
 }
 
+.mySection {
+    margin: 15px, 0, 15px, 15px; 
+}
+
 .circle-image {
     width:45px;
     height:45px;
     border-radius: 50%;
+    display: inline-block;
 }
 
 
@@ -78,3 +85,9 @@ body {
 .d-flex {
     display: flex;
 }
+
+.fas {
+    color: #b1b1b1;
+    margin-right: 15px;
+}
+
