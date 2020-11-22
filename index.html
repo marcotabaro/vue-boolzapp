@@ -53,7 +53,15 @@
                         <input type="text" placeholder="&#xF002; Cerca o inizia una nuova chat" style="font-family:Arial, FontAwesome">
                     </div>
                     <div class="contacts">
-
+                        <ul class='contactList'>
+                            <li
+                            v-for='(contact, myIndex) in contacts'>
+                            <img
+                            :src= "contact.propic"
+                            class:='circle-image'/>
+                            {{ contact.name }}
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <div class="main-right d-flex">
