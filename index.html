@@ -47,19 +47,18 @@
                         <div class="circle-image flex-center">
                             <i class="fas fa-bell-slash"></i>
                         </div>
-                        <p>Ricevi notifiche di nuovi messaggi <br> <a href="#">Attiva notifiche desktop</a></p>
+                        <p>Ricevi notifiche di nuovi messaggi <br> <a class='alertNotification' href="#">Attiva notifiche desktop</a></p>
                     </div>
                     <div class="search flex-center">
                         <input type="text" placeholder="&#xF002; Cerca o inizia una nuova chat" style="font-family:Arial, FontAwesome">
                     </div>
                     <div class="contacts">
-                        <ul class='contactList'>
+                        <ul class='contactList d-flex'>
                             <li
                             v-for='(contact, myIndex) in contacts'>
-                            <img
-                            :src= "contact.propic"
-                            class:='circle-image'/>
-                            {{ contact.name }}
+
+                            <img :src= "contact.propic" class:='circle-image'/>
+                            <p>{{ contact.name }}</p>
                             </li>
                         </ul>
                     </div>

@@ -72,6 +72,10 @@ body {
     background-color: white;
 }
 
+.alertNotification {
+    color: grey;
+}
+
 .search {
     height: 7%;
     background-color:#eaeaea;
@@ -90,11 +94,31 @@ body {
 .contacts > ul {
     list-style-type: none;
 }
-.contactList > li > img {
+
+.contactList {
+    flex-flow: column wrap;
+}
+
+.contactList {
+    padding: 10px;
+}
+
+.contactList > li {
+    width: 100%;
+}
+
+.contactList li > img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
 }
+
+.contactList li > p {
+    display: inline-flex;
+    align-self: flex-start;
+}
+
+
 
 .message {
     height:90%;
