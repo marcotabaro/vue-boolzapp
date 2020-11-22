@@ -35,10 +35,16 @@ body {
 }
 
 .circle-image {
-    width:45px;
-    height:45px;
+    width:40px;
+    height:40px;
     border-radius: 50%;
     display: inline-block;
+}
+
+.header-left .fas,
+.header-right .fas {
+    color: #b1b1b1;
+    margin-right: 15px;
 }
 
 
@@ -62,9 +68,19 @@ body {
     height: 13%;
 }
 
+.notification > .circle-image {
+    background-color: white;
+}
+
 .search {
     height: 7%;
     background-color:#eaeaea;
+}
+
+.search input {
+    width: 90%;
+    height: 60%;
+    border: none;
 }
 
 .contacts {
@@ -80,14 +96,40 @@ body {
     background-color: #eaeaea;
 }
 
+.notification .circle-image .fas {
+    color: #8edafc;
+}
+
+.text-box {
+    justify-content: space-around !important;
+}
+.text-box input {
+    width: 80%;
+    height: 70%;
+    border-radius: 5px;
+    border: none;
+}
+
+.text-box > a > i {
+   color: #757575;
+}
+
+
+
+
+
+
+
 
 /* Helper */
 .d-flex {
     display: flex;
 }
 
-.fas {
-    color: #b1b1b1;
-    margin-right: 15px;
-}
 
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
