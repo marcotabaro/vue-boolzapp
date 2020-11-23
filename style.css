@@ -134,7 +134,7 @@ body {
 }
 
 .text-box {
-    height: 10%;
+    height: 50px;
     background-color: #eaeaea;
     justify-content: space-around !important;
 }

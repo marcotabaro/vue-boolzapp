@@ -1,6 +1,7 @@
+
 const message = [
     {
-        text: 'La marianna va in campagna',
+        text: [],
         sent: true,
         date: new Date(),
     }
@@ -15,28 +16,29 @@ const myApp = new Vue ({
             {
                 name: 'Michele',
                 propic: 'img/avatar_1.jpg',
-                message: [...message],
+                message: randomMessage = text[Math.floor(Math.random() * text.length)],
                 lastSeen: ''
             },
             {
                 name: 'Fabio',
                 propic: 'img/avatar_2.jpg',
-                message: [...message],
+                message: randomMessage = text[Math.floor(Math.random() * text.length)],
                 lastSeen: ''
             },
             {
                 name: 'Samuele',
                 propic: 'img/avatar_3.jpg',
-                message: [...message],
+                message: randomMessage = text[Math.floor(Math.random() * text.length)],
                 lastSeen: ''
             },
             {
                 name: 'Luisa',
                 propic:'img/avatar_4.jpg',
-                message: [...message],
+                message: randomMessage = text[Math.floor(Math.random() * text.length)],
                 lastSeen: ''
             }
         ],
         index: 0,
     }
 })
+
