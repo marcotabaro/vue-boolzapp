@@ -1,7 +1,7 @@
 const myApp = new Vue ({
     el: '#root',
     data: {
-        myUsername: {myName: 'Marco Taba', myImg: 'img/avatar_io'},
+        myProfile: {myName: 'Marco Taba', myImg: 'img/avatar_io.jpg'},
         contacts: [
             {
                 name: 'Michele',
@@ -19,6 +19,7 @@ const myApp = new Vue ({
                 name: 'Luisa',
                 propic:'img/avatar_4.jpg'
             }
-        ]
+        ],
+        index: 0,
     }
 })

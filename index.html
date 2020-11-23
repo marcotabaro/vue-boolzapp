@@ -19,8 +19,8 @@
                 <div class="header-left d-flex">
                    <div class="mySection d-flex">
                         <img id='myPicture' class='circle-image'
-                        src="img/avatar_io.jpg" alt="My Profile Picture"> 
-                        <p>Marco Taba</p>
+                        :src="myProfile.myImg" alt="My Profile Picture"> 
+                        <p>{{myProfile.myName}}</p>
                    </div>
                     <div class="d-flex">
                         <a href="#"><i class="fas fa-circle-notch"></i></a>
@@ -31,8 +31,8 @@
                 <div class="header-right d-flex">
                     <div class="myMainSection d-flex">
                         <img id='myPicture' class='circle-image'
-                        src="img/avatar_1.jpg" alt="My Profile Picture"> 
-                        <p>Michele</p>
+                        :src="contacts[index].propic" alt="Avatar"> 
+                        <p>{{contacts[index].name}}</p>
                     </div>
                     <div class="d-flex">
                         <a href="#"><i class="fas fa-search"></i></a>
@@ -54,11 +54,9 @@
                     </div>
                     <div class="contacts">
                         <ul class='contactList d-flex'>
-                            <li
-                            v-for='(contact, myIndex) in contacts'>
-
-                            <img :src= "contact.propic" class:='circle-image'/>
-                            <p>{{ contact.name }}</p>
+    <li v-for='(contact, myIndex) in contacts' class='d-flex' @click= 'index = myIndex' :class="index ==myIndex ? 'toggleBg' : null">
+                                <img :src= "contact.propic" class:='circle-image'/>
+                                <div class='contact'>{{ contact.name }}</div>
                             </li>
                         </ul>
                     </div>
