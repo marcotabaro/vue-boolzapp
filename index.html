@@ -54,7 +54,10 @@
                     </div>
                     <div class="contacts">
                         <ul class='contactList d-flex'>
-    <li v-for='(contact, myIndex) in contacts' class='d-flex' @click= 'index = myIndex' :class="index ==myIndex ? 'toggleBg' : null">
+                        <li v-for='(contact, myIndex) in contacts' 
+                        class='d-flex' 
+                        @click= 'index = myIndex' 
+                        :class="index ==myIndex ? 'toggleBg' : null">
                                 <img :src= "contact.propic" class:='circle-image'/>
                                 <div class='contact'>{{ contact.name }}</div>
                             </li>
