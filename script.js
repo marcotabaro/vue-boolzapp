@@ -1,4 +1,3 @@
-
 let date = new Date();
 const myApp = new Vue ({
     el: '#root',
@@ -11,7 +10,8 @@ const myApp = new Vue ({
     },
     methods: {
         send: function () {
-            this.contacts[this.contactIndex].message.push({
+            id = this.contacts[this.contactIndex].id;
+            this.contacts[id].message.push({
                 text: this.textBox,
                 sent: true,
                 date: updateDate()
@@ -21,7 +21,6 @@ const myApp = new Vue ({
             setTimeout(this.received, 3000);
         },
         received: function () {
-            let id = this.contacts[this.contactIndex].id;
             this.contacts[id].message.push ({
                 text: quotes[Math.floor(Math.random() * quotes.length)],
                 sent: false,
