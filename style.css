@@ -37,10 +37,6 @@ body {
     margin: 15px, 0, 15px, 15px; 
 }
 
-.myMainSection {
-
-}
-
 .circle-image {
     width:40px;
     height:40px;
@@ -61,7 +57,7 @@ body {
 
 .lastAccess {
     font-size: 0.8em;
-    color: #eaeaea;
+    color: #7c7c7c;
 } 
 
 /* MAIN PART */
@@ -194,8 +190,16 @@ body {
     justify-content: center;
     align-items: center;
     min-width: 100px;
-    max-width: 250px;
+    max-width: 200px;
     border-radius: 5px;
+    padding: 5px;
+}
+
+
+.currentdate {
+    align-self: flex-end;
+    font-size: 0.7em;
+    color: #b3b1b1
 }
 
 .sent {

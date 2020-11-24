@@ -62,18 +62,18 @@
                         class='d-flex' 
                         @click= 'contactIndex = myIndex'
                         :class="contactIndex == myIndex ? 'toggleBg' : null">
-                                <img :src= "contact.propic" class:='circle-image'/>
+                                <img :src= "contact.propic"/>
                                 <div class='contact'>{{ contact.name }}</div>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="main-right d-flex">
-                    <div class="messages">
+                    <div id='chatBox' class="messages">
                         <div class="message d-flex"
                          v-for='msg in contacts[contactIndex].message'
                          :class= "msg.sent == true ? 'sent' : 'received'">
-                        <p>{{ msg.text }}</p>
+                        <div class='textmsg'>{{ msg.text }} </div> <div class='currentdate'>{{ msg.date }}</div>
                          </div>
                     </div>
                     <div class="text-box flex-center">

@@ -1,14 +1,9 @@
-
-// const message = [
-//     {
-//         text: [],
-//         sent: true,
-//         date: new Date(),
-//     }
-// ];
+function updateDate() {
+    let date = new Date();
+    var currentDate = date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
+    return currentDate;
+}
 let date = new Date();
-let currentDate = date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
-
 const myApp = new Vue ({
     el: '#root',
     data: {
@@ -22,7 +17,7 @@ const myApp = new Vue ({
                     {
                         text: quotes[Math.floor(Math.random() * quotes.length)],
                         sent: false,
-                        date: currentDate,
+                        date: updateDate()
                     }
                 ]
             },
@@ -34,7 +29,7 @@ const myApp = new Vue ({
                     {
                         text:quotes[Math.floor(Math.random() * quotes.length)],
                         sent: false,
-                        date: currentDate,
+                        date: updateDate()
                     }
                 ]
             },
@@ -46,7 +41,7 @@ const myApp = new Vue ({
                     {
                         text:quotes[Math.floor(Math.random() * quotes.length)],
                         sent: false,
-                        date: currentDate,
+                        date: updateDate()
                     }
                 ]
             },
@@ -58,7 +53,7 @@ const myApp = new Vue ({
                     {
                         text:quotes[Math.floor(Math.random() * quotes.length)],
                         sent: false,
-                        date: currentDate,
+                        date: updateDate()
                     }
                 ]
             }
@@ -72,7 +67,7 @@ const myApp = new Vue ({
             this.contacts[this.contactIndex].message.push({
                 text: this.textBox,
                 sent: true,
-                date: currentDate
+                date: updateDate()
             });
             this.textBox = '';
             setTimeout(this.received, 3000);
@@ -81,8 +76,16 @@ const myApp = new Vue ({
             this.contacts[this.contactIndex].message.push ({
                 text: quotes[Math.floor(Math.random() * quotes.length)],
                 sent: false,
-                date: currentDate
+                date: updateDate()
             });
         }
     }
 })
+
+
+// autoscroll(){
+//     Vue.nextTick(function(){
+//         let chatBox = document.getElementById('chatBox');
+//         chatBox.scrollTop = chatBox.scrollHeight;
+//     })
+// }
