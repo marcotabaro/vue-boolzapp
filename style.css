@@ -66,6 +66,12 @@ body {
     flex-flow: column nowrap;
     justify-content: space-between;
     overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.main-right::-webkit-scrollbar {
+    display: none;
 }
 
 .notification {
@@ -134,9 +140,13 @@ body {
 
 
 .text-box {
-    height: 50px;
+    min-height: 50px;
     background-color: #eaeaea;
     justify-content: space-around !important;
+    position:sticky;
+    bottom: 0;
+    width: 100%;
+
 }
 
 .notification .circle-image .fas {
@@ -159,12 +169,13 @@ body {
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    width: 250px;
-    min-height: max-content;
+    min-width: 100px;
+    max-width: 220px;
+    border-radius: 5px;
 }
 
 .sent {
-    background-color: green;
+    background-color:#DCF8C6;
     align-self: flex-end;
     margin-right: 30px;
     margin-top: 30px;
