@@ -68,7 +68,7 @@
                     <div class="message d-flex"
                     v-for='msg in contacts[contactIndex].message'
                     :class= "msg.sent == true ? 'sent' : 'received'">
-                        <div>{{ msg.text }}</div>
+                        <p>{{ msg.text }}</p>
                     </div>
                     <div class="text-box flex-center">
                         <a href="#"><i class="far fa-smile"></i></a>

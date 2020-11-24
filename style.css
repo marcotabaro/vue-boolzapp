@@ -64,6 +64,8 @@ body {
 .main-right {
     background-image: url(img/mine.jpg);
     flex-flow: column nowrap;
+    justify-content: space-between;
+    overflow-y: auto;
 }
 
 .notification {
@@ -152,12 +154,26 @@ body {
    color: #757575;
 }
 
+.message {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    min-height: max-content;
+}
+
 .sent {
     background-color: green;
+    align-self: flex-end;
+    margin-right: 30px;
+    margin-top: 30px;
 }
 
 .received {
     background-color: white;
+    margin-left: 30px;
+    margin-top: 30px;
 }
 
 
