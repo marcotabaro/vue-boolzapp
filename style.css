@@ -53,7 +53,7 @@ body {
 
 /* MAIN PART */
 .main-left, .main-right {
-    height: 80vh;
+    height:550px;
 }
 
 .main-left {
@@ -129,9 +129,7 @@ body {
 .contactList li:hover {
     background-color: #eaeaea;
 }
-.message {
-    height:90%;
-}
+
 
 .text-box {
     height: 50px;
@@ -152,6 +150,14 @@ body {
 
 .text-box > a > i {
    color: #757575;
+}
+
+.sent {
+    background-color: green;
+}
+
+.received {
+    background-color: white;
 }
 
 

@@ -31,8 +31,8 @@
                 <div class="header-right d-flex">
                     <div class="myMainSection d-flex">
                         <img id='myPicture' class='circle-image'
-                        :src="contacts[index].propic" alt="Avatar"> 
-                        <p>{{contacts[index].name}}</p>
+                        :src="contacts[contactIndex].propic" alt="Avatar"> 
+                        <p>{{contacts[contactIndex].name}}</p>
                     </div>
                     <div class="d-flex">
                         <a href="#"><i class="fas fa-search"></i></a>
@@ -54,10 +54,10 @@
                     </div>
                     <div class="contacts">
                         <ul class='contactList d-flex'>
-                        <li v-for='(contact, myIndex) in contacts' 
+                        <li v-for='(contact, myIndex) in contacts'  
                         class='d-flex' 
-                        @click= 'index = myIndex' 
-                        :class="index ==myIndex ? 'toggleBg' : null">
+                        @click= 'contactIndex = myIndex'
+                        :class="contactIndex == myIndex ? 'toggleBg' : null">
                                 <img :src= "contact.propic" class:='circle-image'/>
                                 <div class='contact'>{{ contact.name }}</div>
                             </li>
@@ -65,12 +65,15 @@
                     </div>
                 </div>
                 <div class="main-right d-flex">
-                    <div class="message">
-                    {{contacts[index].message}}
+                    <div class="message d-flex"
+                    v-for='msg in contacts[contactIndex].message'
+                    :class= "msg.sent == true ? 'sent' : 'received'">
+                        <div>{{ msg.text }}</div>
                     </div>
                     <div class="text-box flex-center">
                         <a href="#"><i class="far fa-smile"></i></a>
-                        <input type="text" placeholder="Scrivi un messaggio">
+                        <input type="text" placeholder="Scrivi un messaggio"
+                        v-model='textBox' @keyup.enter='send'>
                         <a href="#"><i class="fas fa-microphone"></i></a>
                     </div>
                 </div>
