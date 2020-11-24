@@ -1,64 +1,11 @@
-function updateDate() {
-    let date = new Date();
-    var currentDate = date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
-    return currentDate;
-}
+
 let date = new Date();
 const myApp = new Vue ({
     el: '#root',
     data: {
+        search: '',
         myProfile: {myName: 'Marco Taba', myImg: 'img/avatar_io.jpg'},
-        contacts: [
-            {
-                name: 'Michele',
-                propic: 'img/avatar_1.jpg',
-                lastSeen: 'Ultimo accesso alle 13:49',
-                message: [
-                    {
-                        text: quotes[Math.floor(Math.random() * quotes.length)],
-                        sent: false,
-                        date: updateDate()
-                    }
-                ]
-            },
-            {
-                name: 'Fabio',
-                propic: 'img/avatar_2.jpg',
-                lastSeen: 'Ultimo accesso alle 12:59',
-                message: [
-                    {
-                        text:quotes[Math.floor(Math.random() * quotes.length)],
-                        sent: false,
-                        date: updateDate()
-                    }
-                ]
-            },
-            {
-                name: 'Samuele',
-                propic: 'img/avatar_3.jpg',
-                lastSeen: 'Ultimo accesso alle 18:43',
-                message: [
-                    {
-                        text:quotes[Math.floor(Math.random() * quotes.length)],
-                        sent: false,
-                        date: updateDate()
-                    }
-                ]
-            },
-            {
-                name: 'Luisa',
-                propic:'img/avatar_4.jpg',
-                lastSeen: 'Ultimo accesso ieri',
-                message: [
-                    {
-                        text:quotes[Math.floor(Math.random() * quotes.length)],
-                        sent: false,
-                        date: updateDate()
-                    }
-                ]
-            }
-        ],
-        status: 0,
+        contacts: [...contatti],
         contactIndex: 0,
         textBox: ''
     },
@@ -70,22 +17,29 @@ const myApp = new Vue ({
                 date: updateDate()
             });
             this.textBox = '';
+            this.autoscroll();
             setTimeout(this.received, 3000);
         },
         received: function () {
-            this.contacts[this.contactIndex].message.push ({
+            let id = this.contacts[this.contactIndex].id;
+            this.contacts[id].message.push ({
                 text: quotes[Math.floor(Math.random() * quotes.length)],
                 sent: false,
                 date: updateDate()
             });
+            this.autoscroll();
+        },
+        autoscroll: function(){
+        Vue.nextTick(function(){
+        let chatBox = document.getElementById('chatBox');
+        chatBox.scrollTop = chatBox.scrollHeight;
+        })
+        }
+    },
+    computed: {
+        searchedContact() {
+           return this.contacts.filter((el) => el.name.toLowerCase().includes(this.search.toLowerCase()));
         }
     }
 })
 
-
-// autoscroll(){
-//     Vue.nextTick(function(){
-//         let chatBox = document.getElementById('chatBox');
-//         chatBox.scrollTop = chatBox.scrollHeight;
-//     })
-// }

@@ -54,14 +54,16 @@
                         <p>Ricevi notifiche di nuovi messaggi <br> <a class='alertNotification' href="#">Attiva notifiche desktop</a></p>
                     </div>
                     <div class="search flex-center">
-                        <input type="text" placeholder="&#xF002; Cerca o inizia una nuova chat" style="font-family:Arial, FontAwesome">
+                        <input type="text" placeholder="&#xF002; Cerca o inizia una nuova chat" 
+                        style="font-family:Arial, FontAwesome"
+                        v-model='search'>
                     </div>
                     <div class="contacts">
                         <ul class='contactList d-flex'>
-                        <li v-for='(contact, myIndex) in contacts'  
+                        <li v-for='(contact, myIndex) in searchedContact'  
                         class='d-flex' 
-                        @click= 'contactIndex = myIndex'
-                        :class="contactIndex == myIndex ? 'toggleBg' : null">
+                        @click= 'contactIndex = contact.id'
+                        :class="contactIndex == contact.id ? 'toggleBg' : null">
                                 <img :src= "contact.propic"/>
                                 <div class='contact'>{{ contact.name }}</div>
                             </li>
@@ -73,7 +75,8 @@
                         <div class="message d-flex"
                          v-for='msg in contacts[contactIndex].message'
                          :class= "msg.sent == true ? 'sent' : 'received'">
-                        <div class='textmsg'>{{ msg.text }} </div> <div class='currentdate'>{{ msg.date }}</div>
+                        <div class='textmsg'>{{ msg.text }} </div>
+                        <div class='currentdate'>{{ msg.date }}</div>
                          </div>
                     </div>
                     <div class="text-box flex-center">
