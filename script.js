@@ -17,7 +17,7 @@ const myApp = new Vue ({
             {
                 name: 'Michele',
                 propic: 'img/avatar_1.jpg',
-                lastSeen: '',
+                lastSeen: 'Ultimo accesso alle 13:49',
                 message: [
                     {
                         text: quotes[Math.floor(Math.random() * quotes.length)],
@@ -29,7 +29,7 @@ const myApp = new Vue ({
             {
                 name: 'Fabio',
                 propic: 'img/avatar_2.jpg',
-                lastSeen: '',
+                lastSeen: 'Ultimo accesso alle 12:59',
                 message: [
                     {
                         text:quotes[Math.floor(Math.random() * quotes.length)],
@@ -41,7 +41,7 @@ const myApp = new Vue ({
             {
                 name: 'Samuele',
                 propic: 'img/avatar_3.jpg',
-                lastSeen: '',
+                lastSeen: 'Ultimo accesso alle 18:43',
                 message: [
                     {
                         text:quotes[Math.floor(Math.random() * quotes.length)],
@@ -53,7 +53,7 @@ const myApp = new Vue ({
             {
                 name: 'Luisa',
                 propic:'img/avatar_4.jpg',
-                lastSeen: '',
+                lastSeen: 'Ultimo accesso ieri',
                 message: [
                     {
                         text:quotes[Math.floor(Math.random() * quotes.length)],
@@ -63,28 +63,26 @@ const myApp = new Vue ({
                 ]
             }
         ],
+        status: 0,
         contactIndex: 0,
         textBox: ''
     },
     methods: {
-        contactChange: function (index) {
-            this.contactIndex = index;
-        },
         send: function () {
             this.contacts[this.contactIndex].message.push({
                 text: this.textBox,
                 sent: true,
                 date: currentDate
-            })
+            });
             this.textBox = '';
-            setTimeout(this.received, 5000);
+            setTimeout(this.received, 3000);
         },
         received: function () {
             this.contacts[this.contactIndex].message.push ({
                 text: quotes[Math.floor(Math.random() * quotes.length)],
                 sent: false,
                 date: currentDate
-            })
+            });
         }
     }
 })
