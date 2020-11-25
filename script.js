@@ -29,9 +29,9 @@ const myApp = new Vue ({
             this.autoscroll();
         },
         autoscroll: function(){
-        Vue.nextTick(function(){
-        let chatBox = document.getElementById('chatBox');
-        chatBox.scrollTop = chatBox.scrollHeight;
+            Vue.nextTick(function(){
+            let chatBox = document.getElementById('chatBox');
+            chatBox.scrollTop = chatBox.scrollHeight;
         })
         }
     },
@@ -41,4 +41,26 @@ const myApp = new Vue ({
         }
     }
 })
+
+// /* Switch for dark mode */
+    function darkMode () {
+    var headerLeft = document.getElementsByClassName('header-left')[0];
+    headerLeft.classList.toggle("dark-mode");
+    var headerRight = document.getElementsByClassName('header-right')[0];
+    headerRight.classList.toggle('dark-mode');
+    var mainRight = document.getElementsByClassName('main-right')[0];
+    mainRight.classList.toggle('main-dark');
+    var body = document.body;
+    body.classList.toggle('dark-body');
+    var contatti = document.getElementsByClassName('contacts')[0];
+    contatti.classList.toggle('dark-mode');
+    var textbox = document.getElementsByClassName('text-box')[0];
+    textbox.classList.toggle('dark-mode');
+    var message = document.getElementsByClassName('message')[0];
+    message.classList.toggle('dark-box-text');
+    
+ }
+
+
+
 

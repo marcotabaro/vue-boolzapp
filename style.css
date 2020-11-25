@@ -188,35 +188,35 @@ body {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    align-items: center;
+    width: 40%;
     max-width: 200px;
     border-radius: 5px;
-    padding: 5px;
+    padding: 10px;
 }
 
 
 .currentdate {
+    padding-top: 10px;
     align-self: flex-end;
-    font-size: 0.7em;
+    font-size: 0.6em;
     color: #b3b1b1
 }
 
 .sent {
+    text-align: right;
     background-color:#DCF8C6;
     align-self: flex-end;
     margin-right: 30px;
     margin-top: 30px;
+    max-inline-size: 100px;
 }
 
 .received {
+    text-align: left;
     background-color: white;
     margin-left: 30px;
     margin-top: 30px;
 }
-
-
-
-
 
 
 
@@ -237,4 +237,34 @@ body {
 /* toggleClass for bg color of contacts */
 .toggleBg {
     background-color: #eaeaea;
+}
+
+
+
+/* classes for dark Mode */
+.dark-mode {
+    background-color: #2A2F32;
+}
+
+.dark-body {
+color: white;
+background-color: #262D31;
+background: linear-gradient(to bottom,
+    #00665c,
+    #003f39 20vh,
+    #00302b 20vh,
+    #000000 100%);
+}
+
+.main-dark {
+    background-image: url(img/darkbg.jpg);
+    background-size: contain;
+}
+
+.dark-box-text {
+    background-color: #262D31;
+}
+
+.dark-msg-box {
+    background-color: #054740;
 }

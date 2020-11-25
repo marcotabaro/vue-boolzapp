@@ -14,80 +14,80 @@
 
 </head>
 <body>
-        <div id='root' class="container">
-            <header class="d-flex">
-                <div class="header-left d-flex">
-                   <div class="mySection d-flex">
-                        <img id='myPicture' class='circle-image'
-                        :src="myProfile.myImg" alt="My Profile Picture"> 
-                        <p>{{myProfile.myName}}</p>
-                   </div>
-                    <div class="d-flex">
-                        <a href="#"><i class="fas fa-circle-notch"></i></a>
-                        <a href="#"><i class="fas fa-comment-alt"></i></a>
-                        <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+    <div id='root' class="container">
+        <header class="d-flex">
+            <div class="header-left d-flex"
+            :class=''>
+                <div class="mySection d-flex">
+                    <img id='myPicture' class='circle-image'
+                    :src="myProfile.myImg" alt="My Profile Picture"> 
+                    <p>{{myProfile.myName}}</p>
+                    <button onclick='darkMode()'></button>
+                </div>
+                <div class="d-flex">
+                    <a href="#"><i class="fas fa-circle-notch"></i></a>
+                    <a href="#"><i class="fas fa-comment-alt"></i></a>
+                    <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+                 </div>
+            </div>
+            <div class="header-right d-flex">
+                <div class="myMainSection d-flex">
+                    <img id='myPicture' class='circle-image'
+                    :src="contacts[contactIndex].propic" alt="Avatar">
+                    <div class="d-flex contactUser">
+                        <div>{{contacts[contactIndex].name}}</div>
+                        <div class='lastAccess'>{{ contacts[contactIndex].lastSeen }}</div>
                     </div>
                 </div>
-                <div class="header-right d-flex">
-                    <div class="myMainSection d-flex">
-                        <img id='myPicture' class='circle-image'
-                        :src="contacts[contactIndex].propic" alt="Avatar">
-                        <div class="d-flex contactUser">
-                            <div>{{contacts[contactIndex].name}}</div>
-                            <div class='lastAccess'>{{ contacts[contactIndex].lastSeen }}</div>
-                        </div>
-                        
+                <div class="d-flex">
+                    <a href="#"><i class="fas fa-search"></i></a>
+                    <a href="#"><i class="fas fa-paperclip"></i></a>
+                     <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+                 </div>
+            </div>
+        </header>
+        <main class='d-flex'>
+            <div class="main-left d-flex">
+                <div class="notification flex-center">
+                    <div class="circle-image flex-center">
+                    <i class="fas fa-bell-slash"></i>
                     </div>
-                    <div class="d-flex">
-                        <a href="#"><i class="fas fa-search"></i></a>
-                        <a href="#"><i class="fas fa-paperclip"></i></a>
-                        <a href="#"><i class="fas fa-ellipsis-v"></i></a>
-                    </div>
+                    <p>Ricevi notifiche di nuovi messaggi <br> <a class='alertNotification' href="#">Attiva notifiche desktop</a></p>
                 </div>
-            </header>
-            <main class='d-flex'>
-                <div class="main-left d-flex">
-                    <div class="notification flex-center">
-                        <div class="circle-image flex-center">
-                            <i class="fas fa-bell-slash"></i>
-                        </div>
-                        <p>Ricevi notifiche di nuovi messaggi <br> <a class='alertNotification' href="#">Attiva notifiche desktop</a></p>
-                    </div>
-                    <div class="search flex-center">
-                        <input type="text" placeholder="&#xF002; Cerca o inizia una nuova chat" 
-                        style="font-family:Arial, FontAwesome"
-                        v-model='search'>
-                    </div>
-                    <div class="contacts">
-                        <ul class='contactList d-flex'>
+                <div class="search flex-center">
+                    <input type="text" placeholder="&#xF002; Cerca o inizia una nuova chat" 
+                    style="font-family:Arial, FontAwesome" v-model='search'>
+                </div>
+                <div class="contacts">
+                    <ul class='contactList d-flex'>
                         <li v-for='(contact, myIndex) in searchedContact'  
                         class='d-flex' 
                         @click= 'contactIndex = contact.id'
                         :class="contactIndex == contact.id ? 'toggleBg' : null">
-                                <img :src= "contact.propic"/>
-                                <div class='contact'>{{ contact.name }}</div>
-                            </li>
-                        </ul>
+                            <img :src= "contact.propic"/>
+                            <div class='contact'>{{ contact.name }}</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main-right d-flex">
+                <div id='chatBox' class="messages">
+                    <div class="message d-flex"
+                    v-for='msg in contacts[contactIndex].message'
+                    :class= "msg.sent == true ? 'sent' : 'received'">
+                    <div class='sentmsg'>{{ msg.text }} </div>
+                    <div class='currentdate'>{{ msg.date }}</div>
                     </div>
                 </div>
-                <div class="main-right d-flex">
-                    <div id='chatBox' class="messages">
-                        <div class="message d-flex"
-                         v-for='msg in contacts[contactIndex].message'
-                         :class= "msg.sent == true ? 'sent' : 'received'">
-                        <div class='textmsg'>{{ msg.text }} </div>
-                        <div class='currentdate'>{{ msg.date }}</div>
-                         </div>
-                    </div>
-                    <div class="text-box flex-center">
-                        <a href="#"><i class="far fa-smile"></i></a>
-                        <input type="text" placeholder="Scrivi un messaggio"
-                        v-model='textBox' @keyup.enter='send'>
-                        <a href="#"><i class="fas fa-microphone"></i></a>
-                    </div>
+                <div class="text-box flex-center">
+                    <a href="#"><i class="far fa-smile"></i></a>
+                    <input type="text" placeholder="Scrivi un messaggio"
+                    v-model='textBox' @keyup.enter='send'>
+                    <a href="#"><i class="fas fa-microphone"></i></a>
                 </div>
-            </main>
-        </div>
+            </div>
+        </main>
+    </div>
 <script src="data.js"></script>
 <script src="script.js"></script>
 </body>
