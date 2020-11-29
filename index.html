@@ -65,7 +65,14 @@
                         @click= 'contactIndex = contact.id'
                         :class="contactIndex == contact.id ? 'toggleBg' : null">
                             <img :src= "contact.propic"/>
-                            <div class='contact'>{{ contact.name }}</div>
+                            <div class="card">
+                                <div class='contact'>
+                                    {{ contact.name }}
+                                </div>
+                                <div class="lastMsg">
+                                    {{ contact.message[contact.message.length-1].text }}
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </div>
